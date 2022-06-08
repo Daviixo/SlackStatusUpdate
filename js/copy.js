@@ -24,7 +24,7 @@ function copyText() {
 
     //We can adjust the time here
 
-    const TIME_LIMIT = 1800;
+    const TIME_LIMIT = 3600;
     let timePassed = 0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
