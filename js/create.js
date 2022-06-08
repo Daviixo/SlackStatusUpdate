@@ -1,4 +1,4 @@
-function copyText() {
+function createTemplate() {
 
     // Timer stuff
 
@@ -165,7 +165,8 @@ function copyText() {
     winPrint.document.write('<title>Slack Status Update</title>' + 
     '<strong>Current Status Update#' + value + '</strong>' +
     '<br><br><strong>Impact:</strong><br>' + cImpact + '<br><br><strong>What have we done so far?</strong><br>' + cActions +
-    '<br><br><strong>What are we currently doing?</strong><br>' + cDoing 
+    '<br><br><strong>What are we currently doing?</strong><br>' + cDoing +
+    '<br><br><br><strong>/remind @noc "Time to post another slack update" in 60 minutes!</strong>'
     
     );
 
