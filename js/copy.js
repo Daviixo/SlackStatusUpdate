@@ -145,21 +145,21 @@ function copyText() {
 
     // ------> This will most likely be used afterwards <--------
 
-    document.getElementById("temp").value = 
-    "Current Status Update #" + value + "\n" + 
-    "\nImpact:\n" + cImpact + "\n" + 
-    "\nWhat have we done so far?\n" + cActions + "\n" + 
-    "\nWhat are we currently doing?\n" + cDoing
-    ;
+    // document.getElementById("temp").value = 
+    // "Current Status Update #" + value + "\n" + 
+    // "\nImpact:\n" + cImpact + "\n" + 
+    // "\nWhat have we done so far?\n" + cActions + "\n" + 
+    // "\nWhat are we currently doing?\n" + cDoing
+    // ;
 
-    var copyText = document.getElementById("temp");
+    // var copyText = document.getElementById("temp");
 
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    document.execCommand("copy");
+    // copyText.select();
+    // copyText.setSelectionRange(0, 99999);
+    // document.execCommand("copy");
 
-    console.log("Copy button was clicked. All actions worked accordingly!")
-    alert("Text copied successfully! Remember to either refresh or reset ;)");
+    // console.log("Copy button was clicked. All actions worked accordingly!")
+    // alert("Text copied successfully! Remember to either refresh or reset ;)");
 
     var winPrint = window.open('SlackStuff', '', 'left=0,top=0,width=450,height=400,toolbar=0,scrollbars=0,status=0');
     winPrint.document.write('<title>Slack Status Update</title>' + 
