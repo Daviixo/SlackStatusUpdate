@@ -34,7 +34,7 @@ function createTemplate() {
 
     //We can adjust the time here
 
-    let TIME_LIMIT = 3600;
+    let TIME_LIMIT = 5;
     let timePassed = 0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
