@@ -8,7 +8,7 @@ function createTemplate() {
         else {
          var notification = new Notification('Notification title', {
           icon: 'images/caticon.ico',
-          body: 'Hey there! \nRemember to post an update for your Team!',
+          body: 'Remember to post the next incident Slack update!',
          });
          notification.onclick = function() {
           window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
