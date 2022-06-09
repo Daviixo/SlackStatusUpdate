@@ -1,8 +1,17 @@
+let myFlag = false;
+
 function createTemplate() {
 
+    const buttonClick = document.getElementById('button');
+
+    //document.getElementById('updateSelect');
+    //select.options[select.selectedIndex].value;
+
+    document.getElementById("custImpact").innerHTML = localStorage.getItem("myImpact");
+    document.getElementById("actionsTaken").innerHTML = localStorage.getItem("myActions");
+    document.getElementById("doing").innerHTML = localStorage.getItem("myDoing");
 
     // Timer stuff
-
     // Credit: Mateusz Rybczonec
 
     const FULL_DASH_ARRAY = 283;
@@ -55,6 +64,19 @@ function createTemplate() {
     </div>
     `;
 
+    buttonClick.addEventListener("click", () => {
+        
+
+        console.log("Button was clicked. REFRESHING!");
+        // localStorage.setItem("mySelect", "");
+        // localStorage.setItem("myValue", "");
+        // localStorage.setItem("myImpact", "");
+        // localStorage.setItem("myActions", "");
+        // localStorage.setItem("myDoing", "");
+        location.reload();
+
+    });
+
     startTimer();
 
     function onTimesUp() {
@@ -76,7 +98,7 @@ function createTemplate() {
         alert("Times up!");
         }
     }, 1000);
-    }
+}
 
     function formatTime(time) { 
     const minutes = Math.floor(time / 60);
@@ -143,6 +165,14 @@ function createTemplate() {
     var cActions = document.getElementById("actionsTaken").value;
     var cDoing = document.getElementById("doing").value;
 
+    // This will use our localstorage
+
+    localStorage.setItem("mySelect", select);
+    localStorage.setItem("myValue", value);
+    localStorage.setItem("myImpact", cImpact);
+    localStorage.setItem("myActions", cActions);
+    localStorage.setItem("myDoing", cDoing);
+
     // ------> This will most likely be used afterwards <--------
 
     // document.getElementById("temp").value = 
@@ -168,5 +198,14 @@ function createTemplate() {
     '<br><br><br><strong>/remind @noc-team "Time to post another slack update" in 60 minutes</strong>'
     
     );
+
+
+}
+
+function pageLoads(){
+
+    document.getElementById("custImpact").innerHTML = localStorage.getItem("myImpact");
+    document.getElementById("actionsTaken").innerHTML = localStorage.getItem("myActions");
+    document.getElementById("doing").innerHTML = localStorage.getItem("myDoing");
 
 }
