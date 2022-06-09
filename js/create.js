@@ -2,7 +2,23 @@ let myFlag = false;
 
 function createTemplate() {
 
-    const buttonClick = document.getElementById('button');
+    // Notifications and stuff
+
+    function notifyMe() {
+        if (Notification.permission !== 'granted')
+         Notification.requestPermission();
+        else {
+         var notification = new Notification('Notification title', {
+          icon: 'images/caticon.ico',
+          body: 'Hey there! \nRemember to post update your Team!',
+         });
+         notification.onclick = function() {
+          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
+             };
+         }
+    }
+
+    setInterval(function() {notifyMe();}, 5000);
 
     //document.getElementById('updateSelect');
     //select.options[select.selectedIndex].value;
