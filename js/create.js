@@ -1,5 +1,3 @@
-let myFlag = false;
-
 function createTemplate() {
 
     // Notifications and stuff
