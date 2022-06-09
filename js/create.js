@@ -16,7 +16,7 @@ function createTemplate() {
          }
     }
 
-    setInterval(function() {notifyMe();}, 5000);
+    setInterval(function() {notifyMe();}, 36000);
 
     //document.getElementById('updateSelect');
     //select.options[select.selectedIndex].value;
