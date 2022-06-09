@@ -195,12 +195,14 @@ function createTemplate() {
     winPrint.document.write('<title>Slack Status Update</title><strong>Current Status Update#' + value + '</strong>' +
     '<br><br><strong>Impact:</strong><br>' + cImpact + '<br><br><strong>What have we done so far?</strong><br>' + cActions +
     '<br><br><strong>What are we currently doing?</strong><br>' + cDoing +
-    '<br><br><br><strong>/remind @noc-team "Time to post another slack update" in 60 minutes</strong>'
+    '<br><br><br>/remind @channel “This is a test 2” in 5 seconds'
     
     );
 
 
 }
+
+// '<br><br><br><strong>/remind @noc-team "Time to post another slack update" in 60 minutes</strong>'
 
 function pageLoads(){
 
