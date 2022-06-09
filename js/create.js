@@ -1,5 +1,6 @@
 function createTemplate() {
 
+
     // Timer stuff
 
     // Credit: Mateusz Rybczonec
@@ -24,7 +25,7 @@ function createTemplate() {
 
     //We can adjust the time here
 
-    const TIME_LIMIT = 3600;
+    let TIME_LIMIT = 3600;
     let timePassed = 0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
@@ -142,7 +143,6 @@ function createTemplate() {
     var cActions = document.getElementById("actionsTaken").value;
     var cDoing = document.getElementById("doing").value;
 
-
     // ------> This will most likely be used afterwards <--------
 
     // document.getElementById("temp").value = 
@@ -169,6 +169,5 @@ function createTemplate() {
     '<br><br><br><strong>/remind @noc-team "Time to post another slack update" in 60 minutes</strong>'
     
     );
-
 
 }
