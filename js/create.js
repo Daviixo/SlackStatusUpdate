@@ -162,8 +162,7 @@ function createTemplate() {
     // alert("Text copied successfully! Remember to either refresh or reset ;)");
 
     var winPrint = window.open('SlackStuff', '', 'left=0,top=0,width=450,height=400,toolbar=0,scrollbars=0,status=0');
-    winPrint.document.write('<title>Slack Status Update</title>' + 
-    '<strong>Current Status Update#' + value + '</strong>' +
+    winPrint.document.write('<title>Slack Status Update</title><strong>Current Status Update#' + value + '</strong>' +
     '<br><br><strong>Impact:</strong><br>' + cImpact + '<br><br><strong>What have we done so far?</strong><br>' + cActions +
     '<br><br><strong>What are we currently doing?</strong><br>' + cDoing +
     '<br><br><br><strong>/remind @noc-team "Time to post another slack update" in 60 minutes</strong>'
