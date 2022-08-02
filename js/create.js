@@ -1,31 +1,9 @@
 function createTemplate() {
 
-    // Notifications and stuff
-
-    function notifyMe() {
-        if (Notification.permission !== 'granted')
-         Notification.requestPermission();
-        else {
-         var notification = new Notification('Notification title', {
-          icon: 'images/caticon.ico',
-          body: 'Remember to post the next incident Slack update!',
-         });
-         notification.onclick = function() {
-          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
-             };
-         }
-    }
-
-    setInterval(function() {notifyMe();}, 36000);
-
-    //document.getElementById('updateSelect');
-    //select.options[select.selectedIndex].value;
 
     document.getElementById("custImpact").innerHTML = localStorage.getItem("myImpact");
     document.getElementById("actionsTaken").innerHTML = localStorage.getItem("myActions");
     document.getElementById("doing").innerHTML = localStorage.getItem("myDoing");
-
-    // End of the timer stuff - Copyright and special thanks to Geoff Graham https://codepen.io/geoffgraham/pen/yLywVbW 
 
     //Our final form should show:
     // Current Status Update#[REPORT#]
@@ -45,6 +23,11 @@ function createTemplate() {
 
     var cActions = document.getElementById("actionsTaken").value;
     var cDoing = document.getElementById("doing").value;
+
+    var getPriority = document.getElementById('setPriority');
+    var valuePriority = getPriority.options[select.selectedIndex].value;
+
+    console.log("This is the priority: " + valuePriority);
 
     // This will use our localstorage
 
@@ -69,8 +52,20 @@ function createTemplate() {
     // copyText.setSelectionRange(0, 99999);
     // document.execCommand("copy");
 
-    // console.log("Copy button was clicked. All actions worked accordingly!")
-    // alert("Text copied successfully! Remember to either refresh or reset ;)");
+    if(valuePriority === "P1"){
+
+        console.log("Value is P1, setting timer to 30 mins");
+        const myTimeout = setTimeout(notifyMe, 7000);
+        console.log("Notification will be sent...");
+
+
+    }else{
+
+        console.log("Value is P2, setting timer to 15 mins");
+        const myTimeout = setTimeout(notifyMe, 10000);
+        console.log("Notification will be sent...");
+
+    }
 
     var winPrint = window.open('SlackStuff', '', 'left=0,top=0,width=450,height=400,toolbar=0,scrollbars=0,status=0');
     winPrint.document.write('<title>Slack Status Update</title><strong>Current Status Update#' + value + '</strong>' +
@@ -80,8 +75,25 @@ function createTemplate() {
     
     );
 
-
+    
 }
+
+function notifyMe() {
+    if (Notification.permission !== 'granted')
+     Notification.requestPermission();
+    else {
+     var notification = new Notification('Lets post a new update!', {
+      icon: 'images/caticon.ico',
+      body: 'Remember to post the next incident Slack update!',
+     });
+     notification.onclick = function() {
+      window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
+         };
+     }
+
+    console.log("Notification sent! :D")
+}
+
 
 function pageLoads(){
 
