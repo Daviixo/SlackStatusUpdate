@@ -25,7 +25,7 @@ function createTemplate() {
     var cDoing = document.getElementById("doing").value;
 
     var getPriority = document.getElementById('setPriority');
-    var valuePriority = getPriority.options[select.selectedIndex].value;
+    var valuePriority = getPriority.options[getPriority.selectedIndex].value;
 
     console.log("This is the priority: " + valuePriority);
 
@@ -71,7 +71,7 @@ function createTemplate() {
     winPrint.document.write('<title>Slack Status Update</title><strong>Current Status Update#' + value + '</strong>' +
     '<br><br><strong>Impact:</strong><br>' + cImpact + '<br><br><strong>What have we done so far?</strong><br>' + cActions +
     '<br><br><strong>What are we currently doing?</strong><br>' + cDoing +
-    '<br><br><br>/remind @noc-team "Time to post another slack update" in 60 minutes'
+    '<br><br><br>You could also use:<br>/remind @noc-team "Time to post another slack update" in 60 minutes'
     
     );
 
