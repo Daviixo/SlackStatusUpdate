@@ -54,14 +54,14 @@ function createTemplate() {
 
     if(valuePriority === "P1"){
 
-        console.log("Value is P1, setting timer to 30 mins");
+        console.log("Value is P1, setting timer to 15 mins");
         const myTimeout = setTimeout(notifyMe, 7000);
         console.log("Notification will be sent...");
 
 
     }else{
 
-        console.log("Value is P2, setting timer to 15 mins");
+        console.log("Value is P2, setting timer to 30 mins");
         const myTimeout = setTimeout(notifyMe, 10000);
         console.log("Notification will be sent...");
 
