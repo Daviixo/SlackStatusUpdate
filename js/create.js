@@ -1,6 +1,5 @@
 function createTemplate() {
 
-
     document.getElementById("custImpact").innerHTML = localStorage.getItem("myImpact");
     document.getElementById("actionsTaken").innerHTML = localStorage.getItem("myActions");
     document.getElementById("doing").innerHTML = localStorage.getItem("myDoing");
