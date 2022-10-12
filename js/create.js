@@ -26,7 +26,7 @@ function createTemplate() {
     var getPriority = document.getElementById('setPriority');
     var valuePriority = getPriority.options[getPriority.selectedIndex].value;
 
-    console.log("This is the priority: " + valuePriority);
+    //console.log("This is the priority: " + valuePriority);
 
     // This will use our localstorage
 
@@ -60,19 +60,32 @@ function createTemplate() {
 
     }else{
 
-        console.log("Value is P2, setting timer to 30 mins");
+        console.log("Value is P2 or P3, setting timer to 30 mins");
         const myTimeout = setTimeout(notifyMe, 1800000);
         console.log("Notification will be sent...");
 
     }
 
+    // We'll now create our new tab
+
+    var tab = window.open('about:blank', '_blank');
+
+    html = '<title>Results - Slack Status Update</title><strong>Current Status Update #' + value + '</strong>' +
+    '<br><br><strong>Impact:</strong><br>' + cImpact + '<br><br><strong>What have we done so far?</strong><br>' + cActions +
+    '<br><br><strong>What are we currently doing?</strong><br>' + cDoing +
+    '<br><br><br>You could also use:<br>/remind @noc-team "Time to post another slack update" in 60 minutes'
+
+    tab.document.write(html);
+    tab.document.close();
+
+    /* Leaving old stuff here
     var winPrint = window.open('SlackStuff', '', 'left=0,top=0,width=450,height=400,toolbar=0,scrollbars=0,status=0');
     winPrint.document.write('<title>Slack Status Update</title><strong>Current Status Update #' + value + '</strong>' +
     '<br><br><strong>Impact:</strong><br>' + cImpact + '<br><br><strong>What have we done so far?</strong><br>' + cActions +
     '<br><br><strong>What are we currently doing?</strong><br>' + cDoing +
     '<br><br><br>You could also use:<br>/remind @noc-team "Time to post another slack update" in 60 minutes'
     
-    );
+    ); */
 
     
 }
