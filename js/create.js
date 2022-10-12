@@ -87,6 +87,8 @@ function createTemplate() {
     
     ); */
 
+    alert('Do not close this tab or the notification will not be sent :D');
+
     
 }
 
